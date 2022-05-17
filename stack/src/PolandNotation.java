@@ -20,6 +20,7 @@ public class PolandNotation {
         List<String> infixExpressionList = toInfixExpressionList(expression);
         System.out.println("中缀表达式为" + infixExpressionList);
         List<String> suffixExpressionList = parseSuffixExpressionList(infixExpressionList);
+        //test github 的相关问题 无视这行
         System.out.println("后缀表达式为" + suffixExpressionList);
         System.out.printf("expression=%d",calculate(suffixExpressionList));
     }
