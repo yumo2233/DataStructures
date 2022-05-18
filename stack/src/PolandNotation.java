@@ -4,7 +4,7 @@ import java.util.*;
  * @author Pzr
  * @create 2022/5/15 - 18:27
  */
-public class PolandNotation {
+public class  PolandNotation {
     public static void main(String[] args) {
         //完成一个中缀表达式转成后缀表达式的功能
         //说明

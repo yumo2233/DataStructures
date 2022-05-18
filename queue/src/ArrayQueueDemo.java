@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class ArrayQueueDemo {
     public static void main(String[] args) {
-        ArrayQueue arrayqueue = new ArrayQueue(5);
+        ArrayQueue arrayqueue = new ArrayQueue(3);
         char key = ' ';//接受用户输入
         Scanner scanner = new Scanner(System.in);
         boolean loop = true;
@@ -29,7 +29,7 @@ public class ArrayQueueDemo {
                 case'g':
                     try{
                         int res = arrayqueue.getQueue();
-                       System.out.printf("取出的数据是%d\n",res);
+                        System.out.printf("取出的数据是%d\n",res);
                     }catch(Exception e){
                         System.out.println(e.getMessage());
                     }
@@ -87,7 +87,7 @@ class ArrayQueue{
         if(isEmpty()){
             throw new RuntimeException("队列空，不能取数据");
         }
-         return arr[++front];
+        return arr[++front];
     }
     //显示队列的所有数据
     public void showQueue(){
@@ -97,8 +97,11 @@ class ArrayQueue{
             return;
         }
         for(int i :arr){
-            System.out.println(arr[i]);
+            System.out.println(i);//这边的i就是arr[i] ，如果写成arr[i]就相当于arr[arr[i]]
         }
+//        for (int i = 0; i < arr.length; i++) {
+//            System.out.printf("arr[%d]=%d\n", i, arr[i]);
+//        }
     }
     //显示队头是谁，类似栈的peek()
     public int headQueue(){
