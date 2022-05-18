@@ -94,6 +94,7 @@ public class PolandNotation {
 
 
     //完成对逆波兰表达式的运算
+
     public static int calculate(List<String> ls){
         //创建个栈，只需要一个栈即可
         Stack<String> stack = new Stack<>();
