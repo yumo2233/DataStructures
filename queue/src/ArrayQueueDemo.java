@@ -88,7 +88,7 @@ class ArrayQueue{
             throw new RuntimeException("队列空，不能取数据");
         }
         return arr[++front];
-    }
+    }//
     //显示队列的所有数据
     public void showQueue(){
         //遍历
