@@ -100,27 +100,47 @@ public class  PolandNotation {
         Stack<String> stack = new Stack<>();
         //遍历ls
         for(String item : ls){
-            //这里使用正则表达式
-            //\d是匹配一个数字，\d+是匹配1个或多个数字，前面多一个\是为了转义
-            if(item.matches("\\d+")){
-                //入栈
-                stack.push(item);
-            }else{
-                int num2 = Integer.parseInt(stack.pop());
+//            //这里使用正则表达式
+//            //\d是匹配一个数字，\d+是匹配1个或多个数字，前面多一个\是为了转义
+//            if(item.matches("\\d+")){
+//                //入栈
+//                stack.push(item);
+//            }else{
+//                int num2 = Integer.parseInt(stack.pop());
+//                int num1 = Integer.parseInt(stack.pop());
+//                int res = 0;
+//                if(item.equals("+")){
+//                    res = num1 + num2;
+//                }else if(item.equals("-")){
+//                    res = num1 - num2;
+//                }else if(item.equals("*")){
+//                    res = num1 * num2;
+//                }else if(item.equals("/")){
+//                    res = num1 / num2;
+//                }else{
+//                    throw new RuntimeException("运算符有误");
+//                }
+//                stack.push(""+res);
+//            }
+//
+            if (item.equals("+")) {
                 int num1 = Integer.parseInt(stack.pop());
-                int res = 0;
-                if(item.equals("+")){
-                    res = num1 + num2;
-                }else if(item.equals("-")){
-                    res = num1 - num2;
-                }else if(item.equals("*")){
-                    res = num1 * num2;
-                }else if(item.equals("/")){
-                    res = num1 / num2;
-                }else{
-                    throw new RuntimeException("运算符有误");
-                }
-                stack.push(""+res);
+                int num2 = Integer.parseInt(stack.pop());
+                stack.push(String.valueOf(num2 + num1));
+            } else if (item.equals("-")) {
+                int num1 = Integer.parseInt(stack.pop());
+                int num2 = Integer.parseInt(stack.pop());
+                stack.push(String.valueOf(num2 - num1));
+            } else if (item.equals("*")) {
+                int num1 = Integer.parseInt(stack.pop());
+                int num2 = Integer.parseInt(stack.pop());
+                stack.push(String.valueOf(num2 * num1));
+            } else if (item.equals("/")) {
+                int num1 = Integer.parseInt(stack.pop());
+                int num2 = Integer.parseInt(stack.pop());
+                stack.push(String.valueOf(num2 / num1));
+            } else {
+                stack.push(item);
             }
         }
         return Integer.parseInt(stack.pop());
