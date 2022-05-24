@@ -2,6 +2,10 @@
  * @author Pzr
  * @create 2022/5/23 - 19:08
  */
+
+/**
+ * 用一个结点类new两个对象，一个用来作为头结点好构建链表，另外一个用来辅助构建链表
+ */
 public class SingleLinkedListDemo {
     public static void main(String[] args) {
 //进行测试
