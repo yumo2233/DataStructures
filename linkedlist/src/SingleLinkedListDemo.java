@@ -123,7 +123,7 @@ class SingleLinkedList {
     }
     //删除节点
     public void del(int no){
-        HeroNode temp = head;
+        HeroNode temp = head;//为什么是head而不是head.next呢?因为希望找到的是待删除结点的前一个结点，可能删除的就是头结点的下一个节点
         boolean flag = false;
         while(true){
             if(temp.next == null){
